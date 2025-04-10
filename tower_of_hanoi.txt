@@ -1,0 +1,14 @@
+# Creating a recursive function  
+def tower_of_hanoi(n, A, B, C):  
+    if(n == 1):  
+        print("Move disc 1 from ", A, "to ",C)
+        return  
+    # function call itself  
+    tower_of_hanoi(n - 1, A, C, B)    
+    print("Move disc 1 from ", A, "to ",C)
+    tower_of_hanoi(n - 1, B, A, C) 
+  
+  
+n = int(input('Enter the number of disks: '))  
+# We are referring source as A, auxiliary as B, and target as C  
+tower_of_hanoi(n, 'a', 'b', 'c')  # Calling the function 
